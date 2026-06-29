@@ -2,3 +2,35 @@ Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QL]
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                 A0
+  ExpiresByType text/css                  A31536000
+  ExpiresByType application/javascript    A31536000
+  ExpiresByType image/jpeg                A31536000
+  ExpiresByType image/png                 A31536000
+  ExpiresByType image/webp                A31536000
+  ExpiresByType image/svg+xml             A31536000
+  ExpiresByType application/pdf           A2592000
+  ExpiresByType font/woff2                A31536000
+</IfModule>
+
+# Cache-Control headers
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|pdf)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

@@ -33,4 +33,18 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+
+  build: {
+    target: 'ES2020',
+    reportCompressedSize: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router'],
+          'vendor-motion': ['motion/react'],
+          'vendor-lucide': ['lucide-react'],
+        },
+      },
+    },
+  },
 })
