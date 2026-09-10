@@ -12,7 +12,7 @@ export function About() {
   const t = useT();
 
   return (
-    <section id="sobre" className="py-16 md:py-32 px-6 relative overflow-hidden bg-[#111]">
+    <section id="sobre" className="py-16 md:py-32 px-6 relative overflow-hidden bg-white dark:bg-[#111]">
       <SpaceBackground variant="a" />
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -23,12 +23,12 @@ export function About() {
             <span className="text-sm text-[#c8956a] uppercase tracking-widest font-semibold">{t('about.badge')}</span>
           </motion.div>
           <motion.h2 {...fadeUp(0.1)} className="text-5xl md:text-7xl font-extrabold mb-5 tracking-tight">
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">{t('about.title1')}</span>
+            <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">{t('about.title1')}</span>
             <span className="bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">{t('about.title2')}</span>
           </motion.h2>
-          <motion.p {...fadeUp(0.2)} className="text-lg text-gray-400 md:max-w-2xl md:mx-auto leading-relaxed">
+          <motion.p {...fadeUp(0.2)} className="text-lg text-gray-600 dark:text-gray-400 md:max-w-2xl md:mx-auto leading-relaxed">
             {t('about.desc1')}{' '}
-            <span className="text-white font-semibold">{t('about.desc2')}</span>{' '}
+            <span className="text-gray-900 dark:text-white font-semibold">{t('about.desc2')}</span>{' '}
             {t('about.desc3')}
           </motion.p>
         </div>

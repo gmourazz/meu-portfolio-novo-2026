@@ -11,7 +11,7 @@ export function BackToTop() {
         <motion.button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Voltar ao topo"
-          className="fixed bottom-8 right-6 z-50 w-11 h-11 rounded-full bg-black border border-[#2a2a2a] flex items-center justify-center shadow-lg shadow-black/40 hover:border-[#c8956a]/50 hover:bg-[#0d0d0d] transition-colors duration-300"
+          className="fixed bottom-8 right-6 z-50 w-11 h-11 rounded-full bg-white dark:bg-black border border-gray-300 dark:border-[#2a2a2a] flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/40 hover:border-[#c8956a]/50 hover:bg-gray-100 dark:hover:bg-[#0d0d0d] transition-colors duration-300"
           initial={{ opacity: 0, y: 16, scale: 0.85 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.85 }}
@@ -19,7 +19,7 @@ export function BackToTop() {
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.93 }}
         >
-          <ArrowUp className="w-4 h-4 text-white" />
+          <ArrowUp className="w-4 h-4 text-gray-900 dark:text-white" />
         </motion.button>
       )}
     </AnimatePresence>

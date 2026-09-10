@@ -16,7 +16,7 @@ function Divider() {
 
 export function HomePage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#0a0a0a] text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#faf7f3] dark:bg-[#0a0a0a] text-gray-900 dark:text-white">
       <Header />
       <Hero />
       <Divider />

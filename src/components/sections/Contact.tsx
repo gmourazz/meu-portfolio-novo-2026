@@ -16,7 +16,7 @@ export function Contact() {
     <>
       {showModal && <AgendarModal onClose={() => setShowModal(false)} />}
 
-      <section id="contato" className="pt-16 pb-0 px-6 relative overflow-hidden bg-black">
+      <section id="contato" className="pt-16 pb-0 px-6 relative overflow-hidden bg-[#faf7f3] dark:bg-black">
         <SpaceBackground variant="c" />
         <motion.div
           className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-[#c8956a] blur-[160px] opacity-10 pointer-events-none"
@@ -36,13 +36,13 @@ export function Contact() {
               <span className="text-sm text-[#c8956a] uppercase tracking-widest font-semibold">{t('contact.badge')}</span>
             </motion.div>
             <motion.h2 {...fadeUp(0.1)} className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">{t('contact.title1')}</span>
+              <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">{t('contact.title1')}</span>
               <br />
               <span className="bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">{t('contact.title2')}</span>
               <br />
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">{t('contact.title3')}</span>
+              <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">{t('contact.title3')}</span>
             </motion.h2>
-            <motion.p {...fadeUp(0.2)} className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <motion.p {...fadeUp(0.2)} className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
               {t('contact.desc')}
             </motion.p>
           </div>
@@ -54,9 +54,9 @@ export function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-[#1a1a1a] mt-0">
+        <div className="border-t border-gray-200 dark:border-[#1a1a1a] mt-0">
           <div className="max-w-5xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2">
-            <p className="text-white font-bold text-sm">Geovanna Moura</p>
+            <p className="text-gray-900 dark:text-white font-bold text-sm">Geovanna Moura</p>
             <p className="text-xs text-gray-600">{t('contact.footer')}</p>
           </div>
         </div>

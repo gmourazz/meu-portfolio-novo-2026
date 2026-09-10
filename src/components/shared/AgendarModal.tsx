@@ -42,24 +42,24 @@ export function AgendarModal({ onClose }: Props) {
         />
 
         <motion.div
-          className="relative w-full max-w-lg bg-[#111] border border-[#1e1e1e] rounded-2xl overflow-hidden shadow-2xl"
+          className="relative w-full max-w-lg bg-white dark:bg-[#111] border border-gray-200 dark:border-[#1e1e1e] rounded-2xl overflow-hidden shadow-2xl"
           initial={{ opacity: 0, y: 32, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 32 }}
           transition={{ type: 'spring', stiffness: 300, damping: 28 }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-[#1e1e1e]">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-[#1e1e1e]">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-[#c8956a]/10 border border-[#c8956a]/20 flex items-center justify-center">
                 <Calendar className="w-4 h-4 text-[#c8956a]" />
               </div>
               <div>
-                <p className="text-white font-bold text-sm">Agendar reunião</p>
+                <p className="text-gray-900 dark:text-white font-bold text-sm">Agendar reunião</p>
                 <p className="text-xs text-gray-500">Convite enviado direto para o Google Calendar de Geovanna</p>
               </div>
             </div>
-            <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-colors">
+            <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
               <X className="w-4 h-4" />
             </button>
           </div>
@@ -68,13 +68,13 @@ export function AgendarModal({ onClose }: Props) {
             <div className="p-6">
               {/* Availability info */}
               <div className="flex gap-3 mb-5">
-                <div className="flex-1 p-3 rounded-xl bg-[#0a0a0a] border border-[#1a1a1a] text-center">
+                <div className="flex-1 p-3 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] text-center">
                   <p className="text-xs text-gray-500 mb-1">Dias de semana</p>
-                  <p className="text-sm font-bold text-white">10h – 22h</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">10h – 22h</p>
                 </div>
-                <div className="flex-1 p-3 rounded-xl bg-[#0a0a0a] border border-[#1a1a1a] text-center">
+                <div className="flex-1 p-3 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] text-center">
                   <p className="text-xs text-gray-500 mb-1">Fins de semana</p>
-                  <p className="text-sm font-bold text-white">08h – 19h</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">08h – 19h</p>
                 </div>
               </div>
 
@@ -83,14 +83,14 @@ export function AgendarModal({ onClose }: Props) {
                 <button
                   onClick={() => setWeekStart(d => addDays(d, -7))}
                   disabled={weekStart <= today}
-                  className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-500 hover:text-white hover:bg-white/5 disabled:opacity-30 transition-colors"
+                  className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <p className="text-xs text-gray-500 font-medium">Selecione um dia</p>
                 <button
                   onClick={() => setWeekStart(d => addDays(d, 7))}
-                  className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-colors"
+                  className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -112,10 +112,10 @@ export function AgendarModal({ onClose }: Props) {
                         ${isSelected ? 'bg-[#c8956a]/20 border border-[#c8956a]/40' : 'border border-transparent'}
                       `}
                     >
-                      <span className={`font-medium mb-1 ${isWeekend ? 'text-[#c8956a]' : 'text-gray-400'}`}>
+                      <span className={`font-medium mb-1 ${isWeekend ? 'text-[#c8956a]' : 'text-gray-600 dark:text-gray-400'}`}>
                         {d.toLocaleDateString('pt-BR', { weekday: 'narrow' })}
                       </span>
-                      <span className={`font-bold text-sm ${isSelected ? 'text-[#c8956a]' : 'text-white'}`}>
+                      <span className={`font-bold text-sm ${isSelected ? 'text-[#c8956a]' : 'text-gray-900 dark:text-white'}`}>
                         {d.getDate()}
                       </span>
                     </button>
@@ -138,7 +138,7 @@ export function AgendarModal({ onClose }: Props) {
                         className={`py-2 rounded-xl text-xs font-bold transition-all duration-200
                           ${selectedTime === slot
                             ? 'bg-[#c8956a] text-white'
-                            : 'bg-[#0a0a0a] border border-[#1a1a1a] text-gray-300 hover:border-[#c8956a]/40 hover:text-white'}
+                            : 'bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] text-gray-700 dark:text-gray-300 hover:border-[#c8956a]/40 hover:text-gray-900 dark:hover:text-white'}
                         `}
                       >
                         {slot}
@@ -174,7 +174,7 @@ export function AgendarModal({ onClose }: Props) {
                     placeholder="Seu nome"
                     value={form.name}
                     onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0a0a0a] border border-[#1a1a1a] text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#c8956a]/40 transition-colors"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] text-gray-900 dark:text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#c8956a]/40 transition-colors"
                   />
                 </div>
                 <div className="relative">
@@ -185,7 +185,7 @@ export function AgendarModal({ onClose }: Props) {
                     placeholder="Seu e-mail"
                     value={form.email}
                     onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0a0a0a] border border-[#1a1a1a] text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#c8956a]/40 transition-colors"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] text-gray-900 dark:text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#c8956a]/40 transition-colors"
                   />
                 </div>
                 <div className="relative">
@@ -196,15 +196,15 @@ export function AgendarModal({ onClose }: Props) {
                     rows={3}
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0a0a0a] border border-[#1a1a1a] text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#c8956a]/40 transition-colors resize-none"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] text-gray-900 dark:text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#c8956a]/40 transition-colors resize-none"
                   />
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#0a0a0a] border border-[#1a1a1a] mb-4">
+              <div className="p-3 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1a1a1a] mb-4">
                 <p className="text-xs text-gray-500 leading-relaxed flex items-start gap-2">
                   <Calendar className="w-3.5 h-3.5 text-[#c8956a] flex-shrink-0 mt-0.5" />
-                  <span>Ao confirmar, abrirá o <span className="text-white font-semibold">Google Calendar</span> com o evento criado e Geovanna já adicionada como convidada. Basta salvar e ela receberá o convite na hora.</span>
+                  <span>Ao confirmar, abrirá o <span className="text-gray-900 dark:text-white font-semibold">Google Calendar</span> com o evento criado e Geovanna já adicionada como convidada. Basta salvar e ela receberá o convite na hora.</span>
                 </p>
               </div>
 
@@ -212,7 +212,7 @@ export function AgendarModal({ onClose }: Props) {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="px-4 py-3 rounded-xl border border-[#1e1e1e] text-gray-400 text-sm hover:text-white hover:border-[#2a2a2a] transition-colors"
+                  className="px-4 py-3 rounded-xl border border-gray-200 dark:border-[#1e1e1e] text-gray-600 dark:text-gray-400 text-sm hover:text-gray-900 dark:hover:text-white hover:border-gray-300 dark:hover:border-[#2a2a2a] transition-colors"
                 >
                   ← Voltar
                 </button>

@@ -1,6 +1,18 @@
 import type { Project } from '../types';
 export const projects: Project[] = [
   {
+    title: 'Giselle Anjos — Home Designer',
+    description: 'Site institucional para designer de interiores e engenheira agrônoma, com seções de serviços (design de interiores, ambientes comerciais, móveis planejados e paisagismo), galeria de projetos em 3D e formulário de orçamento que monta a mensagem automaticamente para o WhatsApp.',
+    category: 'Site Institucional',
+    image: '/projetos/designergiselle.webp',
+    gradient: 'from-emerald-900/50 via-teal-900/30 to-green-900/40',
+    tags: ['React', 'TypeScript', 'UI/UX', 'Responsivo', 'CSS', 'Agendamento'],
+    metrics: [{ label: 'Avaliação', value: '5.0 ★' }, { label: 'Design', value: 'Premium' }, { label: 'Nicho', value: 'Design de Interiores' }],
+    link: 'https://giselleanjosdesigner.netlify.app/',
+    testimonials: [],
+    featured: true,
+  },
+  {
     title: 'Dra. Raiane Fonseca',
     description: 'Site profissional para cardiologista substituindo solução no Canva por código próprio. Inclui pixel de rastreamento integrado, design moderno e responsivo focado em captação de pacientes via Google ADS.',
     category: 'Site Institucional',
@@ -173,7 +185,7 @@ export const projects: Project[] = [
     metrics: [{ label: 'Avaliação', value: '5.0 ★' }, { label: 'Layout', value: 'Reformulado' }, { label: 'Nicho', value: 'Tradução' }],
     link: 'https://novatraducoes.com/',
     testimonials: [],
-    featured: true,
+    featured: false,
   },
   {
     title: 'Riconomia',

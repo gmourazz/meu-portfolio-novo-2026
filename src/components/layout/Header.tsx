@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { navItems } from '../../data/navigation';
 import { WA_LINK } from '../../data/contact';
 import { useScrolled } from '../../hooks/useScrolled';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { useLang, type Lang } from '../../context/LanguageContext';
+import { useTheme } from '../../context/ThemeContext';
 import { useT } from '../../hooks/useT';
 
 export function Header() {
@@ -13,6 +14,7 @@ export function Header() {
   const scrolled = useScrolled(40);
   const activeSection = useActiveSection(navItems);
   const { lang, setLang } = useLang();
+  const { theme, toggleTheme } = useTheme();
   const t = useT();
 
   const langs: Lang[] = ['pt', 'en', 'es'];
@@ -21,7 +23,7 @@ export function Header() {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || isMenuOpen
-          ? 'bg-[#0a0a0a] backdrop-blur-xl border-b border-[#1a1a1a]/80 shadow-lg shadow-black/20'
+          ? 'bg-white dark:bg-[#0a0a0a] backdrop-blur-xl border-b border-gray-200 dark:border-[#1a1a1a]/80 shadow-lg shadow-black/5 dark:shadow-black/20'
           : 'bg-transparent'
       }`}
       initial={{ y: -80, opacity: 0 }}
@@ -41,7 +43,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${
-                    isActive ? 'text-[#c8956a]' : 'text-gray-400 hover:text-white'
+                    isActive ? 'text-[#c8956a]' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                   }`}
                 >
                   {t(`nav.${key}`)}
@@ -55,7 +57,7 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             {/* Language switcher */}
-            <div className="hidden md:flex items-center gap-0.5 bg-[#111] border border-[#2a2a2a] rounded-full px-1 py-1">
+            <div className="hidden md:flex items-center gap-0.5 bg-gray-100 dark:bg-[#111] border border-gray-200 dark:border-[#2a2a2a] rounded-full px-1 py-1">
               {langs.map((l) => (
                 <button
                   key={l}
@@ -63,13 +65,23 @@ export function Header() {
                   className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition-all duration-200 ${
                     lang === l
                       ? 'bg-[#c8956a] text-white'
-                      : 'text-gray-500 hover:text-white'
+                      : 'text-gray-500 hover:text-gray-900 dark:hover:text-white'
                   }`}
                 >
                   {l.toUpperCase()}
                 </button>
               ))}
             </div>
+
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 dark:bg-[#111] border border-gray-200 dark:border-[#2a2a2a] text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200"
+              aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
+              title={theme === 'dark' ? 'Modo claro' : 'Modo escuro'}
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
 
             <motion.a
               href={WA_LINK}
@@ -83,7 +95,14 @@ export function Header() {
               {t('header.hire')}
             </motion.a>
             <button
-              className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+              onClick={toggleTheme}
+              className="md:hidden p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button
+              className="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Menu" aria-expanded={isMenuOpen}
             >
@@ -101,7 +120,7 @@ export function Header() {
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               className="md:hidden overflow-hidden"
             >
-              <div className="pt-4 pb-2 space-y-1 border-t border-[#1a1a1a] mt-4">
+              <div className="pt-4 pb-2 space-y-1 border-t border-gray-200 dark:border-[#1a1a1a] mt-4">
                 {navItems.map((item, i) => {
                   const key = item.href.replace('#', '');
                   return (
@@ -112,7 +131,7 @@ export function Header() {
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: i * 0.05 }}
                       className={`block px-2 py-2.5 font-medium transition-colors ${
-                        activeSection === item.href ? 'text-[#c8956a]' : 'text-gray-400 hover:text-[#c8956a]'
+                        activeSection === item.href ? 'text-[#c8956a]' : 'text-gray-600 dark:text-gray-400 hover:text-[#c8956a]'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -129,7 +148,7 @@ export function Header() {
                       className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase border transition-all duration-200 ${
                         lang === l
                           ? 'bg-[#c8956a] border-[#c8956a] text-white'
-                          : 'border-[#2a2a2a] text-gray-500 hover:text-white'
+                          : 'border-gray-200 dark:border-[#2a2a2a] text-gray-500 hover:text-gray-900 dark:hover:text-white'
                       }`}
                     >
                       {l.toUpperCase()}

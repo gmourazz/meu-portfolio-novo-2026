@@ -83,7 +83,7 @@ type Variant = keyof typeof VARIANTS;
 export function SpaceBackground({ variant = 'a' }: { variant?: Variant }) {
   const v = VARIANTS[variant];
   return (
-    <>
+    <div className="opacity-30 dark:opacity-100 transition-opacity duration-500">
       {/* Nebulosas */}
       {v.nebulas.map((n, i) => (
         <div
@@ -131,6 +131,6 @@ export function SpaceBackground({ variant = 'a' }: { variant?: Variant }) {
           filter: 'blur(0.5px)',
         }} />
       </motion.div>
-    </>
+    </div>
   );
 }

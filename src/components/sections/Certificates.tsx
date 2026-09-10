@@ -15,7 +15,7 @@ export function Certificates() {
   const visible = showAll ? certificates : certificates.slice(0, initialCount);
 
   return (
-    <section id="certificados" className="py-16 md:py-32 px-6 relative overflow-hidden bg-[#0a0a0a]">
+    <section id="certificados" className="py-16 md:py-32 px-6 relative overflow-hidden bg-[#faf7f3] dark:bg-[#0a0a0a]">
       <SpaceBackground variant="a" />
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -26,10 +26,10 @@ export function Certificates() {
             <span className="text-sm text-[#c8956a] uppercase tracking-widest font-semibold">Educação Continuada</span>
           </motion.div>
           <motion.h2 {...fadeUp(0.1)} className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Aprendizado </span>
+            <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">Aprendizado </span>
             <span className="bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">constante</span>
           </motion.h2>
-          <motion.p {...fadeUp(0.2)} className="text-xl text-gray-400 md:max-w-3xl md:mx-auto leading-relaxed">
+          <motion.p {...fadeUp(0.2)} className="text-xl text-gray-600 dark:text-gray-400 md:max-w-3xl md:mx-auto leading-relaxed">
             Investimento contínuo em conhecimento para entregar sempre soluções atualizadas e de qualidade.
           </motion.p>
         </div>
@@ -60,7 +60,7 @@ export function Certificates() {
         )}
 
         {/* Banner */}
-        <motion.div {...fadeUp(0.2)} className="relative p-10 rounded-2xl bg-[#111] border border-[#1e1e1e] overflow-hidden text-center">
+        <motion.div {...fadeUp(0.2)} className="relative p-10 rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-[#1e1e1e] overflow-hidden text-center">
           <div className="absolute inset-0 opacity-[0.03]"
             style={{ backgroundImage: 'radial-gradient(#c8956a 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-10">
@@ -70,17 +70,17 @@ export function Certificates() {
               </div>
               <div className="text-left">
                 <p className="text-5xl font-extrabold bg-gradient-to-r from-[#c8956a] to-[#d4a882] bg-clip-text text-transparent">55+</p>
-                <p className="text-gray-400 font-semibold">Certificados concluídos</p>
+                <p className="text-gray-600 dark:text-gray-400 font-semibold">Certificados concluídos</p>
               </div>
             </div>
-            <div className="w-px h-12 bg-[#1e1e1e] hidden md:block" />
+            <div className="w-px h-12 bg-gray-200 dark:bg-[#1e1e1e] hidden md:block" />
             <div className="flex items-center gap-5">
               <div className="w-14 h-14 rounded-xl bg-[#c8956a]/10 border border-[#c8956a]/20 flex items-center justify-center">
                 <Award className="w-7 h-7 text-[#c8956a]" />
               </div>
               <div className="text-left">
                 <p className="text-5xl font-extrabold bg-gradient-to-r from-[#c8956a] to-[#d4a882] bg-clip-text text-transparent">200+</p>
-                <p className="text-gray-400 font-semibold">Horas de cursos concluídos</p>
+                <p className="text-gray-600 dark:text-gray-400 font-semibold">Horas de cursos concluídos</p>
               </div>
             </div>
           </div>

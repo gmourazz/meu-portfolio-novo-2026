@@ -27,7 +27,7 @@ export function Hero() {
         <MessageCircle className="w-4 h-4" /> {t('hero.cta.main')} <ArrowUpRight className="w-4 h-4" />
       </motion.a>
       <motion.a href="/curriculo.pdf" download="Geovanna_Moura_Curriculo.pdf"
-        className="inline-flex items-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full border border-[#2a2a2a] text-gray-400 font-medium text-sm sm:text-base hover:border-[#c8956a]/30 hover:text-white transition-colors"
+        className="inline-flex items-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full border border-gray-300 dark:border-[#2a2a2a] text-gray-600 dark:text-gray-400 font-medium text-sm sm:text-base hover:border-[#c8956a]/30 hover:text-gray-900 dark:hover:text-white transition-colors"
         whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
         <Download className="w-4 h-4" /> {t('hero.cta.resume')}
       </motion.a>
@@ -64,13 +64,13 @@ export function Hero() {
 
             <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible" className="space-y-2 sm:space-y-3">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-none tracking-tight">
-                <span className="text-white block">Geovanna</span>
+                <span className="text-gray-900 dark:text-white block">Geovanna</span>
                 <span className="block bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">Moura</span>
               </h1>
               <p className="text-gray-500 text-xs sm:text-sm font-light tracking-[0.35em] sm:tracking-[0.45em] uppercase mt-1">{t('hero.role')}</p>
             </motion.div>
 
-            <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible" className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-lg">
+            <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible" className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed max-w-lg">
               {t('hero.desc1')}{' '}
               <span className="text-[#c8956a] font-semibold">{t('hero.desc2')}</span>.{' '}
               {t('hero.desc3')}
@@ -79,7 +79,7 @@ export function Hero() {
             <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex gap-6 sm:gap-10 py-2">
               {[
                 { value: '4+',   key: 'hero.stat.experience' },
-                { value: '38+',  key: 'hero.stat.projects'   },
+                { value: '57+',  key: 'hero.stat.projects'   },
                 { value: '5.0★', key: 'hero.stat.rating'     },
               ].map((stat) => (
                 <div key={stat.key}>

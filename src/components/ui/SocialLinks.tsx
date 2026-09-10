@@ -13,7 +13,7 @@ export function SocialLinks() {
           target={s.href.startsWith('http') ? '_blank' : undefined}
           rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
           {...fadeUp(i * 0.08)}
-          className="group flex items-center gap-4 p-5 rounded-xl bg-[#0a0a0a] border border-[#1e1e1e] hover:border-[#c8956a]/40 transition-all duration-300"
+          className="group flex items-center gap-4 p-5 rounded-xl bg-[#faf7f3] dark:bg-[#0a0a0a] border border-gray-200 dark:border-[#1e1e1e] hover:border-[#c8956a]/40 transition-all duration-300"
           whileHover={{ y: -3 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         >
@@ -21,7 +21,7 @@ export function SocialLinks() {
             <s.icon className="w-5 h-5 text-[#c8956a]" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-white font-bold text-sm group-hover:text-[#c8956a] transition-colors">{s.label}</p>
+            <p className="text-gray-900 dark:text-white font-bold text-sm group-hover:text-[#c8956a] transition-colors">{s.label}</p>
             <p className="text-gray-500 text-xs truncate">{s.value}</p>
           </div>
           <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-[#c8956a] group-hover:translate-x-1 transition-all duration-300" />

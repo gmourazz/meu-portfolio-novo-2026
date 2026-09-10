@@ -30,6 +30,7 @@ export function OrbitalSystem() {
 
   return (
     <div className="relative" style={{ width: 680, height: 680 }}>
+      <div className="opacity-40 dark:opacity-100 transition-opacity duration-500">
       {/* Nebulosas */}
       <div className="absolute pointer-events-none" style={{ width: 400, height: 400, top: '5%', left: '5%', borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(120,60,200,0.18) 0%, transparent 70%)', filter: 'blur(40px)' }} />
       <div className="absolute pointer-events-none" style={{ width: 350, height: 350, bottom: '5%', right: '5%', borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(50,100,220,0.15) 0%, transparent 70%)', filter: 'blur(50px)' }} />
@@ -81,6 +82,7 @@ export function OrbitalSystem() {
           }} />
         </motion.div>
       ))}
+      </div>
 
       {/* Foto */}
       <div className="absolute z-10 w-[450px] h-[450px] rounded-full overflow-hidden border-2 border-[#c8956a]/40"

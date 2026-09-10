@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Evita flash de tema errado: aplica preferência salva antes do primeiro paint -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    </script>
+
     <!-- Primary SEO -->
     <title>Geovanna Moura — Desenvolvedora Web Frontend</title>
-    <meta name="description" content="Desenvolvedora web com 4+ anos de experiência. Crio sites performáticos, responsivos e que convertem. React, TypeScript, UI/UX. 38+ projetos entregues com nota 5.0." />
+    <meta name="description" content="Desenvolvedora web com 4+ anos de experiência. Crio sites performáticos, responsivos e que convertem. React, TypeScript, UI/UX. 57+ projetos entregues com nota 5.0." />
     <meta name="author" content="Geovanna Moura" />
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="beSsJSaxVbbBx5XRdPLIaOG9-L1oTYlG6cmtefdytVg" />
+    <link rel="canonical" href="https://geovannamoura.com.br/" />
 
     <!-- Open Graph (redes sociais) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Geovanna Moura — Desenvolvedora Web Frontend" />
-    <meta property="og:description" content="Crio sites performáticos, responsivos e que convertem. React, TypeScript, UI/UX. 38+ projetos com avaliação 5.0." />
+    <meta property="og:description" content="Crio sites performáticos, responsivos e que convertem. React, TypeScript, UI/UX. 57+ projetos com avaliação 5.0." />
     <meta property="og:image" content="/og-image.jpg" />
     <meta property="og:locale" content="pt_BR" />
 
@@ -25,7 +35,11 @@
     <meta name="twitter:image" content="/og-image.jpg" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -34,8 +48,8 @@
       "@type": "Person",
       "name": "Geovanna Moura",
       "jobTitle": "Desenvolvedora Web Frontend",
-      "url": "https://geovannamoura.dev",
-      "image": "https://geovannamoura.dev/eu.jpeg",
+      "url": "https://geovannamoura.com.br",
+      "image": "https://geovannamoura.com.br/eu.jpeg",
       "email": "geovannamouradeveloper@gmail.com",
       "sameAs": [
         "https://linkedin.com/in/geovanna-moura-23472b216",

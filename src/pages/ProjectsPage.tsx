@@ -12,7 +12,7 @@ export function ProjectsPage() {
   const t = useT();
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#faf7f3] dark:bg-[#0a0a0a] text-gray-900 dark:text-white overflow-x-hidden">
       <Header />
       <section className="py-24 px-6 relative overflow-hidden">
         <SpaceBackground variant="b" />
@@ -25,7 +25,7 @@ export function ProjectsPage() {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-[#c8956a] transition-colors font-medium text-sm"
+              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-[#c8956a] transition-colors font-medium text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
               {t('common.backToPortfolio')}
@@ -51,7 +51,7 @@ export function ProjectsPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight"
             >
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
                 {t('allProjects.title').split(' ').slice(0, -1).join(' ')}{' '}
               </span>
               <span className="bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">
@@ -63,7 +63,7 @@ export function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-400 max-w-2xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             >
               {t('allProjects.desc')}
             </motion.p>

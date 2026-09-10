@@ -6,7 +6,7 @@ import { Globe, Zap, Shield, BadgePercent, Gift, ArrowRight } from 'lucide-react
 export function HostingerCard() {
   return (
     <motion.div {...fadeUp(0.3)} className="mb-8">
-      <div className="relative rounded-2xl overflow-hidden border border-[#1e1e1e] bg-[#0a0a0a]">
+      <div className="relative rounded-2xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-[#faf7f3] dark:bg-[#0a0a0a]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c8956a]/40 to-transparent" />
         <div className="p-8">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
@@ -15,11 +15,11 @@ export function HostingerCard() {
                 <Globe className="w-3.5 h-3.5 text-[#c8956a]" />
                 <span className="text-xs text-[#c8956a] font-semibold uppercase tracking-wider">Ainda não tem hospedagem?</span>
               </div>
-              <h4 className="text-white font-bold text-xl mb-2">
+              <h4 className="text-gray-900 dark:text-white font-bold text-xl mb-2">
                 Eu indico a{' '}
                 <span className="bg-gradient-to-r from-[#c8956a] to-[#d4a882] bg-clip-text text-transparent">Hostinger</span>
               </h4>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-lg">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5 max-w-lg">
                 É a hospedagem que eu uso e recomendo para meus clientes: rápida, confiável, com suporte 24h em português e domínio grátis no plano.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

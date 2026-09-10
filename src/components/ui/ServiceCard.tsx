@@ -8,7 +8,7 @@ export function ServiceCard({ service: s, index: i }: Props) {
   return (
     <motion.div
       {...fadeUp(i * 0.08)}
-      className="group relative p-7 rounded-2xl bg-[#0d0d0d] border border-[#1e1e1e] hover:border-[#c8956a]/50 transition-colors duration-500 overflow-hidden"
+      className="group relative p-7 rounded-2xl bg-gray-100 dark:bg-[#0d0d0d] border border-gray-200 dark:border-[#1e1e1e] hover:border-[#c8956a]/50 transition-colors duration-500 overflow-hidden"
       whileHover={{ y: -5 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
@@ -23,7 +23,7 @@ export function ServiceCard({ service: s, index: i }: Props) {
             {s.num}
           </span>
         </div>
-        <h3 className="text-base font-bold mb-2 text-white">{s.title}</h3>
+        <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{s.title}</h3>
         <p className="text-gray-500 text-sm leading-relaxed">{s.description}</p>
       </div>
     </motion.div>

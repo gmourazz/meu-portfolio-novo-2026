@@ -21,11 +21,11 @@ export function TestimonialsCarousel() {
           <MessageSquare className="w-4 h-4 text-[#c8956a]" />
           <span className="text-sm text-[#c8956a] uppercase tracking-widest font-semibold">Avaliações de Clientes</span>
         </div>
-        <h3 className="text-3xl font-extrabold text-white mb-2">
+        <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
           Todos os projetos com{' '}
           <span className="bg-gradient-to-r from-[#c8956a] to-[#d4a882] bg-clip-text text-transparent">5.0 ★</span>
         </h3>
-        <p className="text-gray-500 text-sm">38+ projetos entregues · todos com nota máxima</p>
+        <p className="text-gray-500 text-sm">57+ projetos entregues · todos com nota máxima</p>
       </motion.div>
 
       <div ref={containerRef} className="overflow-hidden">
@@ -33,7 +33,7 @@ export function TestimonialsCarousel() {
           {track.map((t, i) => (
             <div
               key={i}
-              className="flex flex-col p-5 rounded-2xl bg-[#0d0d0d] border border-[#1e1e1e] flex-shrink-0"
+              className="flex flex-col p-5 rounded-2xl bg-gray-100 dark:bg-[#0d0d0d] border border-gray-200 dark:border-[#1e1e1e] flex-shrink-0"
               style={{ width: cardW > 0 ? cardW : `calc((100% - ${GAP * (cols - 1)}px) / ${cols})` }}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -41,7 +41,7 @@ export function TestimonialsCarousel() {
                   {t.initials}
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm">{t.name}</p>
+                  <p className="text-gray-900 dark:text-white font-bold text-sm">{t.name}</p>
                   <div className="flex gap-0.5 mt-0.5">
                     {[...Array(5)].map((_, si) => (
                       <Star key={si} className="w-3 h-3 text-[#c8956a]" fill="currentColor" />
@@ -49,8 +49,8 @@ export function TestimonialsCarousel() {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed italic flex-1">"{t.text}"</p>
-              <div className="mt-4 pt-3 border-t border-[#1a1a1a]">
+              <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed italic flex-1">"{t.text}"</p>
+              <div className="mt-4 pt-3 border-t border-gray-200 dark:border-[#1a1a1a]">
                 <p className="text-xs text-[#c8956a]/80 font-medium truncate">{t.project}</p>
               </div>
             </div>
@@ -59,17 +59,17 @@ export function TestimonialsCarousel() {
       </div>
 
       <div className="flex items-center justify-center gap-4 mt-8">
-        <button onClick={goPrev} className="w-8 h-8 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 hover:border-[#c8956a]/50 hover:text-[#c8956a] transition-all duration-200">
+        <button onClick={goPrev} className="w-8 h-8 rounded-full border border-gray-300 dark:border-[#2a2a2a] flex items-center justify-center text-gray-500 hover:border-[#c8956a]/50 hover:text-[#c8956a] transition-all duration-200">
           <ChevronLeft className="w-4 h-4" />
         </button>
         <div className="flex gap-2">
           {testimonials.map((_, i) => (
             <button key={i} onClick={() => goTo(i)}
-              className={`h-2 rounded-full transition-all duration-300 ${i === dotIdx ? 'bg-[#c8956a] w-6' : 'bg-[#2a2a2a] w-2 hover:bg-[#c8956a]/40'}`}
+              className={`h-2 rounded-full transition-all duration-300 ${i === dotIdx ? 'bg-[#c8956a] w-6' : 'bg-gray-300 dark:bg-[#2a2a2a] w-2 hover:bg-[#c8956a]/40'}`}
             />
           ))}
         </div>
-        <button onClick={goNext} className="w-8 h-8 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 hover:border-[#c8956a]/50 hover:text-[#c8956a] transition-all duration-200">
+        <button onClick={goNext} className="w-8 h-8 rounded-full border border-gray-300 dark:border-[#2a2a2a] flex items-center justify-center text-gray-500 hover:border-[#c8956a]/50 hover:text-[#c8956a] transition-all duration-200">
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>

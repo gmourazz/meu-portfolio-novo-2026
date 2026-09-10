@@ -11,7 +11,7 @@ export function ContactCTA({ onSchedule }: Props) {
       <div className="relative rounded-3xl overflow-hidden">
         <div className="absolute -inset-px bg-gradient-to-r from-[#c8956a] via-[#e0bc9a] to-[#c8956a] rounded-3xl opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#c8956a]/20 via-transparent to-[#c8956a]/10 rounded-3xl blur-2xl" />
-        <div className="relative rounded-3xl bg-[#0d0d0d] p-6 md:p-10 overflow-hidden">
+        <div className="relative rounded-3xl bg-gray-100 dark:bg-[#0d0d0d] p-6 md:p-10 overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04]"
             style={{ backgroundImage: 'radial-gradient(circle, #c8956a 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#c8956a]/15 rounded-full blur-3xl pointer-events-none" />
@@ -24,16 +24,16 @@ export function ContactCTA({ onSchedule }: Props) {
                 </span>
                 <span className="text-xs text-[#c8956a] font-semibold uppercase tracking-widest">Disponível agora</span>
               </div>
-              <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-3 leading-tight">
+              <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">
                 Vamos começar<br />
                 <span className="bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">seu projeto?</span>
               </h3>
               <div className="flex items-center gap-6 mt-4">
-                <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                   <Zap className="w-4 h-4 text-[#c8956a]" />
                   Resposta em até 2h
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                   <Sparkles className="w-4 h-4 text-[#c8956a]" />
                   Orçamento grátis
                 </div>
@@ -54,7 +54,7 @@ export function ContactCTA({ onSchedule }: Props) {
               </motion.a>
               <motion.button
                 onClick={onSchedule}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white/10 hover:border-[#c8956a]/30 transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-gray-900 dark:text-white font-bold text-sm hover:bg-black/5 dark:hover:bg-white/10 hover:border-[#c8956a]/30 transition-all duration-300 whitespace-nowrap"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >

@@ -8,10 +8,10 @@ export function BioCard() {
       <div className="relative p-6 md:p-10 border border-[#c8956a]/20 rounded-2xl h-full flex flex-col justify-between gap-8">
         <div>
           <p className="text-4xl text-[#c8956a]/20 font-serif leading-none mb-3">"</p>
-          <p className="text-white text-2xl font-bold leading-snug mb-4">
+          <p className="text-gray-900 dark:text-white text-2xl font-bold leading-snug mb-4">
             Enquanto outros entregam código, eu entrego resultado.
           </p>
-          <p className="text-gray-400 leading-relaxed text-sm mb-4">
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm mb-4">
             Sou desenvolvedora Frontend com 4 anos de experiência, caprichosa por natureza: cada detalhe importa,
             cada pixel tem propósito. Cada projeto recebe o mesmo cuidado que eu gostaria de ter se fosse a cliente.
             Nada fica pela metade.
@@ -21,10 +21,10 @@ export function BioCard() {
             Código que sustenta, design que encanta e dedicação do início ao fim.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[#1e1e1e]">
+        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200 dark:border-[#1e1e1e]">
           {[
             { value: '4+',   label: 'anos de exp.' },
-            { value: '38+',  label: 'projetos' },
+            { value: '57+',  label: 'projetos' },
             { value: '5.0★', label: 'avaliação' },
           ].map((s) => (
             <div key={s.label} className="text-center">

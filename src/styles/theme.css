@@ -3,10 +3,10 @@
 :root {
   --font-size: 16px;
   --font-family: 'Montserrat', sans-serif;
-  --background: #ffffff;
-  --foreground: oklch(0.145 0 0);
+  --background: #faf7f3;
+  --foreground: #1a1310;
   --card: #ffffff;
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: #1a1310;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #030213;
@@ -49,10 +49,10 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #111111;
+  --card-foreground: #ffffff;
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
@@ -138,8 +138,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-family);
-    background-color: #0a0a0a;
-    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
@@ -158,7 +157,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: var(--background);
   }
 
   ::-webkit-scrollbar-thumb {
