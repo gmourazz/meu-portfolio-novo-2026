@@ -1,5 +1,17 @@
-import type { Project } from '../types';
+import type { Project } from '@/types/index';
 export const projects: Project[] = [
+  {
+    title: 'ASIO Sport Wear — E-commerce',
+    description: 'E-commerce completo para marca de moda fitness de Uberlândia, no ar e vendendo. Painel administrativo para a dona da marca gerenciar sozinha produtos, estoque por cor e tamanho, pedidos, clientes, cupons, coleções e conteúdo da home. Frete com cotação real dos Correios via Melhor Envio, pagamento por PIX e cartão com Mercado Pago, e total recalculado no servidor em centavos.',
+    category: 'E-commerce',
+    image: '/projetos/use-asio.webp',
+    gradient: 'from-slate-900/50 via-zinc-900/30 to-neutral-900/40',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Mercado Pago', 'Melhor Envio', 'Painel Admin', 'Responsivo'],
+    metrics: [{ label: 'Avaliação', value: '5.0 ★' }, { label: 'Painel Admin', value: 'Incluso' }, { label: 'Nicho', value: 'Moda Fitness' }],
+    link: 'https://useasio.com.br/',
+    testimonials: [],
+    featured: true,
+  },
   {
     title: 'Giselle Anjos — Home Designer',
     description: 'Site institucional para designer de interiores e engenheira agrônoma, com seções de serviços (design de interiores, ambientes comerciais, móveis planejados e paisagismo), galeria de projetos em 3D e formulário de orçamento que monta a mensagem automaticamente para o WhatsApp.',

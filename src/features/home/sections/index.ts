@@ -1,0 +1,12 @@
+export { HeroSection } from './hero/HeroSection';
+export { AboutSection } from './about/AboutSection';
+export { ManifestoSection } from './manifesto/ManifestoSection';
+export { StorySection } from './story/StorySection';
+export { MobileSection } from './mobile/MobileSection';
+export { ProjectsSection } from './projects/ProjectsSection';
+export { CaseStudySection } from './case-study/CaseStudySection';
+export { ProcessSection } from './process/ProcessSection';
+export { EvolutionSection } from './evolution/EvolutionSection';
+export { StackSection } from './stack/StackSection';
+export { ReviewsSection } from './reviews/ReviewsSection';
+export { ContactSection } from './contact/ContactSection';

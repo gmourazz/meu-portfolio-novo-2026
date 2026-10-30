@@ -1,4 +1,4 @@
-import type { Certificate } from '../types';
+import type { Certificate } from '@/types/index';
 
 export const certificates: Certificate[] = [
   // Janeiro 2026 — Santander Bootcamp + AWS

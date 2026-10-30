@@ -1,12 +1,9 @@
 [build]
-  command = "npm install && npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Sem regra de fallback para index.html: cada rota tem seu .html (build) e endereços
+# inexistentes recebem o 404.html com status 404 de verdade.

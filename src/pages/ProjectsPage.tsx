@@ -1,82 +1,77 @@
-import { Link } from "react-router";
-import { motion } from "motion/react";
-import { ArrowLeft, Code2 } from "lucide-react";
-import { Header } from "../components/layout/Header";
-import { ProjectCard } from "../components/shared/ProjectCard";
-import { SpaceBackground } from "../components/shared/SpaceBackground";
-import { BackToTop } from "../components/shared/BackToTop";
-import { projects } from "../data/projects";
-import { useT } from "../hooks/useT";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { MarqueeStrip } from '@/shared/ui/MarqueeStrip';
+import { ProjectsHeader } from '@/features/projects/components/ProjectsHeader';
+import { ProjectsHero } from '@/features/projects/components/ProjectsHero';
+import { ProjectFilterBar, type ProjectView } from '@/features/projects/components/ProjectFilterBar';
+import { ProjectGrid } from '@/features/projects/components/ProjectGrid';
+import { ProjectList } from '@/features/projects/components/ProjectList';
+import { ProjectsCta } from '@/features/projects/components/ProjectsCta';
+import { catalog, catalogTypes } from '@/features/projects/data';
+import { usePageMotion } from '@/shared/motion/usePageMotion';
+import { useReducedMotion } from '@/shared/hooks/useReducedMotion';
+import { useLang } from '@/i18n/LanguageContext';
+import { useMessages } from '@/i18n/useMessages';
+import { useSeo } from '@/seo/useSeo';
+import { projectsJsonLd } from '@/features/projects/seo';
+
+const ProjectModal = lazy(() => import('@/features/projects/components/ProjectModal').then(m => ({ default: m.ProjectModal })));
+
+const noop = () => {};
+const TITLES = catalog.map(p => p.title);
 
 export function ProjectsPage() {
-  const t = useT();
+  const rootRef = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+  const { lang } = useLang();
+  const messages = useMessages();
+  const t = messages.allProjects;
+  const [filter, setFilter] = useState('all');
+  const [view, setView] = useState<ProjectView>('grid');
+  const [open, setOpen] = useState(-1);
+
+  usePageMotion(rootRef, !reduced, noop, lang);
+  useSeo('/projects', projectsJsonLd(lang, t.current));
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  const items = filter === 'all' ? catalog : catalog.filter(p => p.type === filter);
+  const filters = [{ id: 'all', label: t.all }, ...catalogTypes.map(id => ({ id, label: t.types[id] ?? id }))];
+
+  const step = useCallback((d: number) => setOpen(i => (i + d + items.length) % items.length), [items.length]);
+  const close = useCallback(() => setOpen(-1), []);
 
   return (
-    <div className="min-h-screen bg-[#faf7f3] dark:bg-[#0a0a0a] text-gray-900 dark:text-white overflow-x-hidden">
-      <Header />
-      <section className="py-24 px-6 relative overflow-hidden">
-        <SpaceBackground variant="b" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-12"
-          >
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-[#c8956a] transition-colors font-medium text-sm"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              {t('common.backToPortfolio')}
-            </Link>
-          </motion.div>
+    <div ref={rootRef} className={`pf pj-static ${reduced ? '' : 'pf-motion'}`}>
+      <a href="#conteudo" className="pf-skip">{messages.nav.skip}</a>
+      <div data-pf="progress" className="pf-progress" />
+      <ProjectsHeader />
+      <main id="conteudo">
+        <ProjectsHero />
+        <ProjectFilterBar
+          filters={filters}
+          filter={filter}
+          onFilter={id => { setFilter(id); setOpen(-1); }}
+          view={view}
+          onView={setView}
+          labels={t}
+        />
 
-          <div className="mb-16 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c8956a]/10 border border-[#c8956a]/20 mb-6"
-            >
-              <Code2 className="w-4 h-4 text-[#c8956a]" />
-              <span className="text-sm text-[#c8956a] uppercase tracking-widest font-semibold">
-                {t('allProjects.count', { n: projects.length })}
-              </span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight"
-            >
-              <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
-                {t('allProjects.title').split(' ').slice(0, -1).join(' ')}{' '}
-              </span>
-              <span className="bg-gradient-to-r from-[#c8956a] via-[#d4a882] to-[#e0bc9a] bg-clip-text text-transparent">
-                {t('allProjects.title').split(' ').slice(-1)[0]}
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
-            >
-              {t('allProjects.desc')}
-            </motion.p>
+        <section className="pj-list-section">
+          <div className="pf-wrap">
+            {view === 'grid'
+              ? <ProjectGrid items={items} onOpen={setOpen} animateKey={`${filter}|grid`} />
+              : <ProjectList items={items} onOpen={setOpen} animateKey={`${filter}|list`} />}
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((p, i) => (
-              <ProjectCard key={p.title} p={p} i={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-      <BackToTop />
+        <MarqueeStrip words={TITLES} ariaLabel={t.marqueeAria} />
+        <ProjectsCta />
+      </main>
+
+      {open >= 0 && (
+        <Suspense fallback={null}>
+          <ProjectModal list={items} index={open} onClose={close} onStep={step} />
+        </Suspense>
+      )}
     </div>
   );
 }

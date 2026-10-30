@@ -1,0 +1,46 @@
+/* Reset e base global (substitui o preflight do Tailwind). Fica em @layer base: qualquer regra de componente vence. */
+@layer base {
+  *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; scroll-margin-top: 100px; }
+
+  html {
+    line-height: 1.5;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    tab-size: 4;
+  }
+  body { font-family: 'Geist', 'Geist Fallback', system-ui, sans-serif; background: #fff; color: #0a0a0c; }
+
+  h1 { font-size: 1.5rem; font-weight: 500; line-height: 1.5; }
+  h2 { font-size: 1.25rem; font-weight: 500; line-height: 1.5; }
+  h3 { font-size: 1.125rem; font-weight: 500; line-height: 1.5; }
+  h4 { font-size: 1rem; font-weight: 500; line-height: 1.5; }
+  a { color: inherit; text-decoration: inherit; }
+  b, strong { font-weight: bolder; }
+  small { font-size: 80%; }
+  img, svg, video, canvas { display: block; vertical-align: middle; }
+  img, video { max-width: 100%; height: auto; }
+
+  button, input, select, textarea, label {
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  input { font-weight: 400; }
+  textarea { resize: vertical; }
+  button, [role='button'] { cursor: pointer; }
+  :disabled { cursor: default; }
+  ::placeholder { opacity: 1; color: color-mix(in oklab, currentcolor 50%, transparent); }
+
+  ::selection { background: oklch(0.6 0.27 300); color: #fff; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #fff; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, oklch(0.6 0.27 300), #ff8ad8); border-radius: 10px; }
+}

@@ -1,0 +1,41 @@
+{
+  "siteUrl": "https://geovannamoura.com.br",
+  "siteName": "Geovanna Moura",
+  "locales": { "pt": "pt_BR", "en": "en_US", "es": "es_ES" },
+  "htmlLang": { "pt": "pt-BR", "en": "en", "es": "es" },
+  "ogImage": { "path": "/og-image.jpg", "width": 1200, "height": 630 },
+  "routes": {
+    "/": {
+      "sitemap": { "changefreq": "monthly", "priority": "1.0" },
+      "title": {
+        "pt": "Geovanna Moura | Engenheira de Software, Web e Mobile",
+        "en": "Geovanna Moura | Software Engineer, Web and Mobile",
+        "es": "Geovanna Moura | Ingeniera de Software, Web y Mobile"
+      },
+      "description": {
+        "pt": "Engenheira de Software que cria sites e apps web e mobile com React, React Native e TypeScript. Mais de 55 projetos entregues com nota 5.0. Vamos conversar?",
+        "en": "Software engineer building websites and web and mobile apps with React, React Native and TypeScript. 55+ projects delivered, all rated 5.0. Let's talk?",
+        "es": "Ingeniera de Software que crea sitios y apps web y mobile con React, React Native y TypeScript. Más de 55 proyectos entregados con nota 5.0. ¿Hablamos?"
+      }
+    },
+    "/projects": {
+      "sitemap": { "changefreq": "monthly", "priority": "0.8" },
+      "title": {
+        "pt": "Projetos | Geovanna Moura, Engenheira de Software",
+        "en": "Projects | Geovanna Moura, Software Engineer",
+        "es": "Proyectos | Geovanna Moura, Ingeniera de Software"
+      },
+      "description": {
+        "pt": "Alguns dos meus projetos favoritos: sites, landing pages, e-commerce e plataformas com identidade própria, feitos com React e TypeScript.",
+        "en": "Some of my favorite projects: websites, landing pages, e-commerce and platforms with their own identity, built with React and TypeScript.",
+        "es": "Algunos de mis proyectos favoritos: sitios, landing pages, e-commerce y plataformas con identidad propia, hechos con React y TypeScript."
+      }
+    }
+  },
+  "legacyRedirects": {
+    "/about": "/#sobre",
+    "/technologies": "/#stack",
+    "/certificates": "/#stack",
+    "/contact": "/#contato"
+  }
+}
