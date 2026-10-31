@@ -3,6 +3,10 @@ Options -MultiViews
 DirectoryIndex index.html
 RewriteEngine On
 
+# Páginas antigas: 301 para a seção equivalente (bloco gerado em scripts/postbuild.mjs a partir de src/seo/seo.json)
+# legacy-redirects:start
+# legacy-redirects:end
+
 # /projects -> projects.html (sem redirecionar, a URL continua limpa)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f

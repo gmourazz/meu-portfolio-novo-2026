@@ -44,7 +44,7 @@ Com `prefers-reduced-motion`, `motion` vira `false` e só o essencial roda (prog
 ## SEO
 
 - `src/seo/seo.json` é a fonte única de title/description por rota e idioma.
-- No build, `scripts/seo-head.mjs` escreve o `<head>` (canonical, hreflang, Open Graph, Twitter, JSON-LD) em `index.html`; `scripts/postbuild.mjs` gera `projects.html`, `404.html`, redirecionamentos das páginas antigas e o `sitemap.xml` (com `lastmod` e alternates de idioma).
+- No build, `scripts/seo-head.mjs` escreve o `<head>` (canonical, hreflang, Open Graph, Twitter, JSON-LD) em `index.html`; `scripts/postbuild.mjs` gera `projects.html`, `404.html`, redirecionamentos das páginas antigas (páginas HTML de apoio + 301 reais em `dist/_redirects` para o Netlify e num bloco gerado do `.htaccess` para a Hostinger) e o `sitemap.xml` (com `lastmod` e alternates de idioma).
 - Em runtime, `useSeo` mantém title, canonical, hreflang e `<html lang>` em dia ao trocar de rota/idioma; `/projects` ainda publica um JSON-LD `CollectionPage` com a lista de projetos.
 - Idioma: `?lang=en|es` na URL > preferência salva > português. O idioma do navegador **não** é usado de propósito (buscadores precisam ver sempre o mesmo conteúdo em `/`).
 

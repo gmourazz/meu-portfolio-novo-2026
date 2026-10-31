@@ -41,6 +41,14 @@ for (const [from, to] of Object.entries(seo.legacyRedirects)) {
 `);
 }
 
+// 3b) 301 de verdade nos hosts que suportam: Netlify (_redirects, com ! para valer mesmo com o .html existente) e Apache (.htaccess)
+write('_redirects', Object.entries(seo.legacyRedirects).map(([from, to]) => `${from} ${to} 301!`).join('\n') + '\n');
+const LEGACY = /# legacy-redirects:start[\s\S]*?# legacy-redirects:end/;
+const htaccess = read('.htaccess');
+if (!LEGACY.test(htaccess)) throw new Error('dist/.htaccess sem o bloco legacy-redirects');
+write('.htaccess', htaccess.replace(LEGACY, `# legacy-redirects:start\n${Object.entries(seo.legacyRedirects)
+  .map(([from, to]) => `RewriteRule ^${from.slice(1)}/?$ ${to} [R=301,NE,L]`).join('\n')}\n# legacy-redirects:end`));
+
 // 4) sitemap com alternates de idioma
 const today = new Date().toISOString().slice(0, 10);
 const urls = Object.entries(seo.routes).map(([route, { sitemap }]) => {
