@@ -836,3 +836,13 @@
   .pf-btn-start > span:first-child { font-size: 8.5px; }
   .pf-btn-ghost { padding: 0 14px; font-size: 14px; }
 }
+
+/* Celular: segunda linha dos títulos encostada à direita; tags e botão do case centralizados */
+@media (max-width: 640px) {
+  .pf-h2 { width: 100%; }
+  .pf-h2 > span { display: grid; width: 100%; }
+  .pf-h2-b { justify-self: end; margin-left: 0; }
+  .pf-contato-inner .pf-h2-b, .pj-cta .pf-h2-b { justify-self: center; }
+  .pf-case-info .pf-proj-tags { align-self: stretch; justify-content: center; }
+  .pf .pf-case-cta { align-self: center; }
+}
