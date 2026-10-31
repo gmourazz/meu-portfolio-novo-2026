@@ -5,7 +5,7 @@ export const pt = {
     aria: 'Seções',
     items: [['inicio', 'Início'], ['sobre', 'Sobre'], ['historia', 'História'], ['mobile', 'Mobile'], ['projetos', 'Projetos'], ['experiencia', 'Experiência'], ['feedbacks', 'Feedbacks']] as [string, string][],
     contact: 'Contato',
-    langAria: 'Idioma',
+    langAria: 'Idioma', menu: 'Menu', menuClose: 'Fechar menu',
   },
   hud: { unlocked: 'CONQUISTA DESBLOQUEADA' },
   achievements: {

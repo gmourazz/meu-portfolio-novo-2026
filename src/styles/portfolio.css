@@ -766,3 +766,57 @@
   .pj-card:hover .pj-card-shot img { transform: none; }
 }
 @media (hover: none) and (max-width: 640px) { .pj-row:hover { padding-left: 12px; } }
+
+/* ───── Celular: menu em painel, sem HUD fixo, projetos empilhados ───── */
+.pf-menu-btn { display: none; }
+.pf-menu {
+  pointer-events: auto; position: fixed; inset: 0; z-index: 90; display: flex; flex-direction: column; justify-content: center; gap: 32px;
+  padding: max(88px, env(safe-area-inset-top)) var(--gutter) max(32px, env(safe-area-inset-bottom));
+  background: rgba(10, 10, 12, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); color: #fff;
+  animation: pf-menu-in 0.45s var(--ease);
+}
+.pf-menu nav { display: flex; flex-direction: column; }
+.pf .pf-menu nav a {
+  display: flex; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: clamp(28px, 8.5vw, 42px); font-weight: 700; letter-spacing: -0.05em; line-height: 1.1; color: rgba(255, 255, 255, 0.55);
+}
+.pf .pf-menu nav a.is-active, .pf .pf-menu nav a:hover { color: #fff; }
+.pf-menu nav a span { font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: 0; color: var(--neon2); }
+.pf a.pf-menu-cta, .pf a.pf-menu-cta:hover {
+  align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px;
+  background: var(--neon-deep); color: #fff; font-weight: 600; box-shadow: 0 0 30px -6px var(--neon);
+}
+.pf-menu-close {
+  position: absolute; top: max(18px, env(safe-area-inset-top)); right: var(--gutter); width: 48px; height: 48px;
+  display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: #fff;
+}
+@keyframes pf-menu-in { from { opacity: 0; transform: translateY(-12px); } }
+@media (prefers-reduced-motion: reduce) { .pf-menu { animation: none; } }
+
+@media (max-width: 700px) {
+  .pf-header--home { justify-content: space-between; align-items: center; padding: 0 var(--gutter); }
+  .pf-header--home .pf-nav { display: none; }
+  .pf-menu-btn {
+    pointer-events: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px 0 14px; border-radius: 999px;
+    font-size: 14px; color: #fff; background: rgba(10, 10, 12, 0.82); backdrop-filter: blur(20px) saturate(1.6); -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    box-shadow: 0 18px 50px -18px rgba(80, 20, 160, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  .pf-header--home .pf-lang { position: static; }
+  .pf-hero { padding-top: 104px; }
+
+  .pf-sticky { position: relative; min-height: 0; overflow: visible; padding: 32px 0 0; gap: 28px; }
+  .pf-sticky > .pf-head { position: static; }
+  .pf-projetos .pf-head .pf-mono, .pf-projetos .pf-hbar { display: none; }
+  .pf-track { flex-direction: column; width: auto; gap: 16px; }
+  .pf .pf-proj { width: 100%; border-radius: 30px; padding: 10px; }
+  .pf-proj-shot { border-radius: 22px; }
+  .pf-proj-body { padding: 18px 10px 10px; }
+  .pf-proj-body h3 { font-size: 24px; }
+  .pf-proj-arrow { width: 44px; height: 44px; }
+  .pf .pf-proj-all { width: 100%; min-height: 170px; padding: 28px; border-radius: 30px; }
+}
+
+@media (max-width: 640px) {
+  .pf-hud { display: none; }
+  .pf-toast { left: 12px; right: 12px; bottom: max(16px, env(safe-area-inset-bottom)); }
+}

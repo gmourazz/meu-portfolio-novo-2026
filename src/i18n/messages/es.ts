@@ -6,7 +6,7 @@ export const es: Messages = {
     aria: 'Secciones',
     items: [['inicio', 'Inicio'], ['sobre', 'Sobre mí'], ['historia', 'Historia'], ['mobile', 'Mobile'], ['projetos', 'Proyectos'], ['experiencia', 'Experiencia'], ['feedbacks', 'Opiniones']],
     contact: 'Contacto',
-    langAria: 'Idioma',
+    langAria: 'Idioma', menu: 'Menú', menuClose: 'Cerrar menú',
   },
   hud: { unlocked: 'LOGRO DESBLOQUEADO' },
   achievements: {

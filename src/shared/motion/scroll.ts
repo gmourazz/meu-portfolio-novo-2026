@@ -69,7 +69,7 @@ export function setupScroll({ motion, ref, all }: Scope): Disposer {
       } else {
         trackExtra = 0;
         section.style.height = '';
-        sticky.style.overflowX = 'auto';
+        sticky.style.overflowX = '';
         sticky.style.height = '';
         track.style.transform = '';
       }
