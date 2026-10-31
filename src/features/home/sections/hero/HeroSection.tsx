@@ -33,7 +33,6 @@ export function HeroSection() {
 
       <div className="pf-hero-meta pf-mono">
         <span><BadgeCheck data-pf="dot" size={18} className="pf-ok" /><span className="pf-ink">{t.available}</span></span>
-        <span>{t.copyright} {new Date().getFullYear()}</span>
       </div>
 
       <h1 className="pf-h1">

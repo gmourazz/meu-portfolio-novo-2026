@@ -14,7 +14,7 @@ export const pt = {
     stack: ['Inventário aberto', '+100 XP'], feedbacks: ['Reputação 5.0', '+250 XP'], contato: ['Chefão final: contato', '+500 XP'],
   } as Record<string, [string, string]>,
   hero: {
-    available: 'Disponível para projetos', role: 'Engenheira de Software', copyright: 'Portfólio ©',
+    available: 'Disponível para projetos', role: 'Engenheira de Software',
     leadPre: 'Crio ', leadStrong: 'soluções modernas, de alta performance e com identidade', leadPost: ', da ideia até a publicação.',
     start: 'PRESS START', resume: 'Currículo ↗',
   },

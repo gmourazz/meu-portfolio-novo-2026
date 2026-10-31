@@ -15,7 +15,7 @@ export const es: Messages = {
     stack: ['Inventario abierto', '+100 XP'], feedbacks: ['Reputación 5.0', '+250 XP'], contato: ['Jefe final: contacto', '+500 XP'],
   },
   hero: {
-    available: 'Disponible para proyectos', role: 'Ingeniera de Software', copyright: 'Portafolio ©',
+    available: 'Disponible para proyectos', role: 'Ingeniera de Software',
     leadPre: 'Creo ', leadStrong: 'soluciones modernas, de alto rendimiento y con identidad', leadPost: ', de la idea hasta la publicación.',
     start: 'PRESS START', resume: 'Currículum ↗',
   },

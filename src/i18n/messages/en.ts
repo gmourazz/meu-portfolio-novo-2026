@@ -15,7 +15,7 @@ export const en: Messages = {
     stack: ['Inventory opened', '+100 XP'], feedbacks: ['Rated 5.0', '+250 XP'], contato: ['Final boss: contact', '+500 XP'],
   },
   hero: {
-    available: 'Available for projects', role: 'Software Engineer', copyright: 'Portfolio ©',
+    available: 'Available for projects', role: 'Software Engineer',
     leadPre: 'I build ', leadStrong: 'modern, high-performance solutions with their own identity', leadPost: ', from the first idea to launch.',
     start: 'PRESS START', resume: 'Résumé ↗',
   },

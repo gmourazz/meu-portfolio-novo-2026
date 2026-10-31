@@ -820,3 +820,19 @@
   .pf-hud { display: none; }
   .pf-toast { left: 12px; right: 12px; bottom: max(16px, env(safe-area-inset-bottom)); }
 }
+
+/* Hero no celular: pílulas centralizadas e os dois botões lado a lado */
+@media (max-width: 700px) {
+  .pf-tags { justify-content: center; }
+  .pf-ctas { flex-wrap: nowrap; gap: 10px; }
+  .pf-ctas > a { flex: 1 1 auto; min-width: 0; justify-content: space-between; }
+  .pf .pf-btn-start { gap: 10px; padding: 6px 6px 6px 18px; }
+  .pf-btn-start > span:first-child { font-size: 10px; white-space: nowrap; }
+  .pf-btn-start > span:last-child { width: 42px; height: 42px; }
+  .pf-btn-ghost { justify-content: center; min-height: 54px; padding: 0 18px; font-size: 15px; white-space: nowrap; }
+}
+@media (max-width: 360px) {
+  .pf .pf-btn-start { padding-left: 14px; gap: 8px; }
+  .pf-btn-start > span:first-child { font-size: 8.5px; }
+  .pf-btn-ghost { padding: 0 14px; font-size: 14px; }
+}
